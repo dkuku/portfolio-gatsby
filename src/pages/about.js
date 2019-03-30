@@ -6,17 +6,6 @@ import { Segment, Image, Header, Container } from 'semantic-ui-react'
 
 const About = () => (
   <Layout>
-    <SEO
-      title="Home"
-      keywords={[
-        `Daniel`,
-        `Kukula`,
-        `portfolio`,
-        `developer`,
-        `rails`,
-        `react`,
-      ]}
-    />
     <div>
       <MyHeading />
       <Segment style={{ border: 'none' }}>

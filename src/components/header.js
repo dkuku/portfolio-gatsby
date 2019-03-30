@@ -10,6 +10,10 @@ const Header = ({ siteTitle }) => (
         <Icon name="home" /> Home
       </Menu.Item>
       <Menu.Menu position="right">
+        <Menu.Item as={Link} to="/blog">
+          <Icon name="edit" />
+          Blog
+        </Menu.Item>
         <Menu.Item as={Link} to="/projects">
           <Icon name="code" />
           Projects
