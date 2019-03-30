@@ -20,3 +20,4 @@ const AllTags = ({ pathContext }) => {
     )
   }
 }
+export default AllTags;
