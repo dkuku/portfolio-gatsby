@@ -20,11 +20,11 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <div className="site">
-        <div className="site-content">
-        <Header siteTitle={data.site.siteMetadata.title} />
-          {children}
-        </div>
-        <Footer/>
+          <div className="site-content">
+            <Header siteTitle={data.site.siteMetadata.title} />
+            {children}
+          </div>
+          <Footer />
         </div>
       </>
     )}

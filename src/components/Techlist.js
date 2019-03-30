@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Techlist = (props) => (
+const Techlist = props => (
   <div>
     <ul>
-      {props.tech.map(tech => <li key={tech} >{tech}</li>)}
+      {props.tech.map(tech => (
+        <li key={tech}>{tech}</li>
+      ))}
     </ul>
   </div>
 )

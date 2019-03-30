@@ -7,18 +7,24 @@ import { projects } from '../components/constants'
 
 const Projects = () => (
   <Layout>
-    <SEO title="Home" keywords={
-      [`Daniel`, `Kukula`, `portfolio`,
-      `developer`, `rails`,  `react`
-      ]} />
+    <SEO
+      title="Home"
+      keywords={[
+        `Daniel`,
+        `Kukula`,
+        `portfolio`,
+        `developer`,
+        `rails`,
+        `react`,
+        'ruby',
+      ]}
+    />
     <Container style={{ marginBottom: '1em' }}>
-        <Card.Group>
-            {projects.map((r, index) => {
-                return (
-                    <Project key={index} num={index} {...r} />
-                )
-            })}
-        </Card.Group>
+      <Card.Group>
+        {projects.map((r, index) => {
+          return <Project key={index} num={index} {...r} />
+        })}
+      </Card.Group>
     </Container>
   </Layout>
 )
