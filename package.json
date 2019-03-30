@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "DK-homepage",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Daniel Kuula - homepage and blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Daniel Kukula <Daniel.kuku@gmail.com>",
   "dependencies": {
     "gatsby": "^2.0.76",
     "gatsby-image": "^2.0.20",
