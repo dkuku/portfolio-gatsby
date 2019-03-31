@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Layout from '../components/layout'
+import { List, Header, Button, Container } from 'semantic-ui-react'
 
 const Tags = ({ pathContext }) => {
   const { posts, tagName } = pathContext
@@ -8,17 +9,21 @@ const Tags = ({ pathContext }) => {
   if (posts) {
     return (
       <Layout>
-        <span>Posts about {tagName};</span>
+        <Container>
+          <Header>Posts about {tagName}</Header>
 
-        <ul>
-          {posts.map(post => {
-            return (
-              <li>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-              </li>
-            )
-          })}
-        </ul>
+          <List>
+            {posts.map(post => {
+              return (
+                <List.Item>
+                  <Link to={post.frontmatter.path}>
+                    {post.frontmatter.title}
+                  </Link>
+                </List.Item>
+              )
+            })}
+          </List>
+        </Container>
       </Layout>
     )
   }

@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
-import { Icon, Header, Button, Grid } from 'semantic-ui-react'
+import { Icon, Header, Button, Container } from 'semantic-ui-react'
 
 const Template = ({ data, location, pathContext }) => {
   const { markdownRemark: post } = data
@@ -13,7 +13,7 @@ const Template = ({ data, location, pathContext }) => {
   return (
     <Layout>
       <Helmet title={`${title} - My Blog`} />
-      <div>
+      <Container>
         <Header>{title}</Header>
         <Header as="h3">{date}</Header>
         <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -31,7 +31,7 @@ const Template = ({ data, location, pathContext }) => {
             </Link>
           )}
         </p>
-      </div>
+      </Container>
     </Layout>
   )
 }
