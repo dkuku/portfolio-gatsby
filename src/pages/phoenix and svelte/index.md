@@ -2,7 +2,7 @@
 path: '/phoenix-svelte-setup'
 date: '2019-09-28'
 title: "Make phenix use svelte"
-tags: ["Phoenix, "svelte"]
+tags: ["phoenix", "svelte"]
 excerpt: "Make phenix use svelte"
 ---
 In this blogpost I want to show how to make phoenix use svelte in templates.
