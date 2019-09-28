@@ -35,7 +35,10 @@ Now all your development should me done in the development branch
 ### When you want to update it then 
 ```
 npm run deploy
-git fetch --all
 git merge gh-pages master
+git fetch --all
+git pull origin master
+git add public
+git commit -m ""
 git push origin master
 ```
