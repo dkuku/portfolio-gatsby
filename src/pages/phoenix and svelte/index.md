@@ -8,7 +8,7 @@ excerpt: "Make phenix use svelte"
 In this blogpost I want to show how to make phoenix use svelte in templates.
 So lets start:
 
-Edit your `asset/package.json` file and add these 3 lines to devDependencies - also remove uglifyjs - we will replace it with tersera which is a maintained fork of uglify
+Edit your `asset/package.json` file and add these 3 lines to devDependencies - also remove uglifyjs - we will replace it with terser which is a maintained fork of uglify
 ```
 +    "svelte": "^3.12.1",
 +    "svelte-loader": "^2.13.6",
@@ -16,13 +16,11 @@ Edit your `asset/package.json` file and add these 3 lines to devDependencies - a
 -    "uglifyjs-webpack-plugin": "^1.2.4",
 ```
 Next run `npm install`
-after verything is installed we can move to the webpack setup:
-remove uglify and import tersera and add replace the initialization:
-remove
+after everything is installed we can move to the webpack setup:
+remove uglify, import terser and add the initialization:
 ```
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 ```
-and add
 ```
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -49,7 +47,7 @@ Next add a resolve section:
     modules: ['node_modules']
   },
 ```
-Add also these two  - the mjs part is needed because otherwise webpack throws an error that no require can be used in the browser
+Add also these two  - the mjs part is needed because otherwise webpack throws an error that no require function can be used in the browser
 ```
         use: {
           loader: 'babel-loader'
@@ -73,11 +71,11 @@ Add also these two  - the mjs part is needed because otherwise webpack throws an
      ]
 ```
 with this setup we can include svelte templates to our views
-In our `/assets/js/app.js` add 
+In  `/assets/js/app.js` add
 ```
 import './svelte.js';
 ```
-In our `/assets/js/svelte.js` with this content:
+In `/assets/js/svelte.js` with this content:
 ```
 import App from './App.svelte'
 
@@ -89,7 +87,7 @@ const app = new App({
 })
 export default app
 ```
-And in our `/assets/js/App.svelte` add this content:
+And in  `/assets/js/App.svelte` add:
 ```
 <script>
 	export let name;
@@ -129,9 +127,9 @@ this allows us to use a helper in our templates:
 ```
 we can pass as many params in this map as we want
 then we need to create a directory `assets/js/svelte`
-and inside we can create new files with the same name as the first param passed to the svelte helper:
+and inside create new files with the same name as the first param passed to the svelte helper:
 `assets/js/svelte/test.svelte`
-with normal svelte templating:
+with normal svelte style templating:
 ```
  <script>
  	export let name;
@@ -169,5 +167,4 @@ window.onload = function() {
   });
 };
 ```
-
 Thats all - diffs of both commits can be found in this [gist](https://gist.github.com/dkuku/cf644f87e984d28f359886da5df307b3)
