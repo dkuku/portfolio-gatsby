@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import {graphql} from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import { Icon, Header, Button, Container } from 'semantic-ui-react'
